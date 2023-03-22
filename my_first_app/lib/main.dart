@@ -194,8 +194,11 @@ class FavoritesPage extends StatelessWidget {
     return ListView(
       children: [
         Text("Favorites: "),
-        for (var msg in appState.favorites)
-          Text(msg.asLowerCase),
+        for (var pair in appState.favorites)
+          ListTile(
+            leading: Icon(Icons.favorite),
+            title: Text(pair.asLowerCase),
+          )
       ],
       );
    }
